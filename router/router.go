@@ -1,9 +1,13 @@
 package router
 
-import "github.com/gin-gonic/gin"
+import (
+	"hasari-api/handlers/music"
+
+	"github.com/gin-gonic/gin"
+)
 
 func Init() {
 	r := gin.Default()
-	r.GET("/ping", func(c *gin.Context) {})
+	r.GET("/musics", music.List)
 	r.Run(":8080")
 }
